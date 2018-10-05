@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html id="landing-html" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Match the fruit to score points before running out of turns">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One%7CLuckiest+Guy" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.min.css" type="text/css">
+</head>
+
+<body id="landing-body">
+
+  <!-- Header -->
+  <header>
+    <div class="points">
+      <h3>Points:</h3>
+      <p id="points-track">0</p>
+    </div>
+
+    <h1>Memory Match</h1>
+
+    <div class="turns">
+      <h3>Turns:</h3>
+      <p id="turns-track">20</p>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Load Game Board Here -->
+  <div class="board-container">
+    <!-- Ajax loaded content -->
+  </div>
+  <!-- End Game Board -->
+
+  <!-- Wrapper -->
+  <div class="instructions-wrapper">
+
+    <!-- Game Instructions -->
+    <section class="instructions">
+      <h2><span class="fas fa-star"></span> How to Play <span class="fas fa-star"></span></h2>
+      <p>Classic game of memory. Flip over two cards to reveal the fruit behind them. If the two cards match, you score points! If not, you lose a turn.</p>
+      <p>* One match = 100 points/1 turn<br> * Two matches in a row = 250 points/2 turns<br> * Three matches in a row = 500 points/3 turns</p>
+      <p>The game is over when you match all the cards or run out of turns!</p>
+    </section>
+    <!-- End Instructions -->
+
+    <!-- Start Game -->
+    <section class="start-game">
+      <img src="images/monkey.png" alt="Cartoon monkey illustration">
+      <a id="start-button" href="#">Start Game!</a>
+    </section>
+    <!-- End Start Section -->
+
+  </div>
+  <!-- End Wrapper -->
+
+  <!-- Two in a row image -->
+  <div id="two"><img src="images/two.png" alt="Two in a row"></div>
+  <!-- End Two in a row -->
+
+  <!-- Three in a row image -->
+  <div id="three"><img src="images/three.png" alt="Three in a row"></div>
+  <!-- End Three in a row -->
+
+  <!-- Game End Message -->
+  <div class="game-end">
+    <h2 id="end-heading">You</h2>
+    <p id="end-points">Your total score was</p>
+    <a href="#" class="play-again">Click To Play Again!</a>
+  </div>
+  <!-- Close Game End Message -->
+
+  <!-- Footer -->
+  <footer>
+    <p>Developed by <a href="http://brandonhughey.ca" target="_blank">Brandon Hughey</a></p>
+    <p>Fruit images by <a href="https://www.freepik.com/free-photos-vectors/icon" target="_blank">Rawpixel.com - Freepik.com</a>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- JS scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <!-- End JS Scripts -->
+
+</body>
+
+</html>

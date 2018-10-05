@@ -1,0 +1,471 @@
+//Partial Imports
+@import "partials/_functions.scss";
+@import "partials/_variables.scss";
+@import "partials/_animations.scss";
+@import "partials/_mixins.scss";
+
+//Vendor Imports
+@import "vendor/font-awesome/regular";
+@import "vendor/font-awesome/solid";
+@import "vendor/font-awesome/brands";
+@import "vendor/font-awesome/fontawesome";
+
+//Global Styling
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin: 1% auto;
+  opacity: 0;
+  @include small-breakpoint {
+    margin: 4% auto 100% auto;
+  }
+  @include phone-breakpoint {
+    margin: 6% auto 100% auto;
+  }
+  @include small-phone {
+    margin: 10% auto 100% auto;
+  }
+  @include xs-phone {
+    margin: 12% auto 100% auto;
+  }
+  @include tiny-phone {
+    margin: 15% auto 100% auto;
+  }
+}
+
+#landing-body {
+  min-height: 100%;
+  background-image: url(../images/jungle-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $silver_white;
+  letter-spacing: calc-rem(2);
+  font-family: $title_font;
+  font-size: $default_size;
+}
+
+//Main Game Styling
+section {
+  margin: calc-rem(-1) auto calc-rem(-1) auto;
+  text-align: center;
+  .game-square { //To slide out when clicked
+    @include square-setup;
+    background-color: $yellow_color;
+    background-image: url(../images/monkey-card.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: .4s;
+    cursor: pointer;
+    @include medium-breakpoint {
+      height: calc-rem(75);
+      width: calc-rem(75);
+    }
+    @include small-breakpoint {
+      height: calc-rem(60);
+      width: calc-rem(60);
+    }
+    @include phone-breakpoint {
+      height: calc-rem(50);
+      width: calc-rem(50);
+    }
+    @include small-phone {
+      height: calc-rem(40);
+      width: calc-rem(40);
+    }
+    @include xs-phone {
+      height: calc-rem(30);
+      width: calc-rem(30);
+    }
+    @include tiny-phone {
+      height: calc-rem(25);
+      width: calc-rem(25);
+    }
+  }
+  .img-square { //Holds the fruit image
+    @include square-setup;
+    background-color: $light_gray;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    @include medium-breakpoint {
+      height: calc-rem(75);
+      width: calc-rem(75);
+    }
+    @include small-breakpoint {
+      height: calc-rem(60);
+      width: calc-rem(60);
+    }
+    @include phone-breakpoint {
+      height: calc-rem(50);
+      width: calc-rem(50);
+    }
+    @include small-phone {
+      height: calc-rem(40);
+      width: calc-rem(40);
+    }
+    @include xs-phone {
+      height: calc-rem(30);
+      width: calc-rem(30);
+    }
+    @include tiny-phone {
+      height: calc-rem(25);
+      width: calc-rem(25);
+    }
+  }
+}
+
+.row {
+  @include phone-breakpoint {
+    margin-bottom: 2%;
+  }
+  @include small-phone {
+    margin-bottom: 3%;
+  }
+  @include xs-phone {
+    margin-bottom: 4%;
+  }
+  @include tiny-phone {
+    margin-bottom: 5%;
+  }
+}
+
+//Fruit Image Classes
+.cherry {
+  background-image: url(../images/cherry.png);
+}
+
+.apple {
+  background-image: url(../images/apple.png);
+}
+
+.banana {
+  background-image: url(../images/banana.png);
+}
+
+.grapes {
+  background-image: url(../images/grapes.png);
+}
+
+.pineapple {
+  background-image: url(../images/pineapple.png);
+}
+
+.strawberry {
+  background-image: url(../images/strawberry.png);
+}
+
+.watermelon {
+  background-image: url(../images/watermelon.png);
+}
+
+.pear {
+  background-image: url(../images/pear.png);
+}
+
+.orange {
+  background-image: url(../images/orange.png);
+}
+
+.blueberry {
+  background-image: url(../images/blueberry.png);
+}
+
+//Assign match class if cards match
+.match {
+  background-color: $green_color !important;
+}
+
+.flash {
+  @include flash-setup;
+  color: $green_color;
+}
+
+//Start Page
+header {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  height: auto;
+  background-image: url(../images/wood-pattern.png);
+  background-color: $dark_brown;
+  border: 3px solid $yellow_color;
+  border-top: none !important;
+  border-radius: 0 0 calc-rem(20) calc-rem(20);
+  h1 {
+    align-self: center;
+    @include phone-breakpoint {
+      font-size: $large_size;
+    }
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+  h3 {
+    text-decoration: underline;
+    @include phone-breakpoint {
+      font-size: $large_size;
+    }
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+  .points {
+    margin-top: calc-rem(6);
+    @include phone-breakpoint {
+      font-size: $large_size;
+    }
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+  .turns {
+    margin-top: calc-rem(6);
+    @include phone-breakpoint {
+      font-size: $large_size;
+    }
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+}
+
+#points-track,
+#turns-track {
+  font-size: $display_size;
+  opacity: 0;
+  margin-top: -15%;
+  margin-bottom: -3%;
+}
+
+.instructions-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+  @include medium-breakpoint {
+    font-size: $size_16;
+  }
+  @include small-breakpoint {
+    flex-direction: column;
+  }
+}
+
+.instructions {
+  display: inline-block;
+  width: 45%;
+  background-image: url(../images/wood-pattern.png);
+  background-color: $dark_brown;
+  border: 3px solid $yellow_color;
+  border-radius: calc-rem(20);
+  @include small-breakpoint {
+    width: 95%;
+  }
+  p {
+    font-family: $body_font;
+    padding: 0 calc-rem(10);
+  }
+  h2 {
+    padding-top: calc-rem(10);
+    border-bottom: 2px solid $silver_white;
+    @include phone-breakpoint {
+      font-size: $large_size;
+    }
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+  span {
+    font-size: $medium_size;
+    @include tiny-phone {
+      font-size: $default_size;
+    }
+  }
+}
+
+.start-game {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  @include medium-breakpoint {
+    align-self: center;
+  }
+  @include small-breakpoint {
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 95%;
+  }
+  img {
+    display: inline-block;
+    align-self: flex-start;
+    @include small-breakpoint {
+      margin: auto;
+      align-self: center;
+    }
+  }
+  #start-button {
+    text-decoration: none;
+    display: inline-block;
+    font-size: $medium_size;
+    margin: 5% auto 0 12%;
+    align-self: center;
+    height: calc-rem(45);
+    width: calc-rem(250);
+    padding-top: calc-rem(5);
+    background-color: $yellow_color;
+    color: $dark_green;
+    border: 4px solid $dark_green;
+    border-radius: calc-rem(8);
+    transition: .6s;
+    @include extra-large {
+      margin-left: 10%;
+    }
+    @include jumbo {
+      margin-left: 5%;
+    }
+    @include medium-breakpoint {
+      margin-left: 6%;
+    }
+    @include small-breakpoint {
+      margin-left: -13%;
+      margin-right: 0;
+      align-self: center;
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: $dark_green;
+      color: $yellow_color;
+      border: 4px solid $yellow_color;
+    }
+  }
+}
+
+//Two/Three in a row images
+#two {
+  display: none;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  @include phone-breakpoint {
+    top: 42%;
+    left: 25%;
+  }
+}
+
+#three {
+  display: none;
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  @include phone-breakpoint {
+    top: 25%;
+    left: 30%;
+  }
+}
+
+.bounce {
+  display: initial !important;
+  animation-name: bounce;
+  animation-delay: 0;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+//Game End Message
+.game-end {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  border: 3px solid $yellow_color;
+  border-radius: calc-rem(20);
+  text-align: center;
+  background-color: $green_color;
+  @include phone-breakpoint {
+    width: 95%;
+    left: 2%;
+  }
+  h2 {
+    margin-top: 0;
+    background-image: url(../images/wood-pattern.png);
+    background-color: $dark_brown;
+    border-bottom: 2px solid $silver_white;
+    border-radius: calc-rem(20) calc-rem(20) 0 0;
+  }
+  p {
+    margin-top: 5%;
+    font-size: $medium_size;
+  }
+  .play-again {
+    display: inline-block;
+    font-size: $medium_size;
+    text-decoration: none;
+    margin: 5% auto 5% auto;
+    height: calc-rem(45);
+    width: calc-rem(300);
+    max-width: 100%;
+    padding-top: calc-rem(5);
+    background-color: $yellow_color;
+    color: $dark_green;
+    border: 4px solid $dark_green;
+    border-radius: calc-rem(8);
+    transition: .6s;
+    &:hover {
+      text-decoration: none;
+      background-color: $dark_green;
+      color: $yellow_color;
+      border: 4px solid $yellow_color;
+    }
+  }
+}
+
+//Footer
+footer {
+  font-family: $body_font;
+  font-size: $small_size;
+  margin: auto;
+  padding: calc-rem(10) 0;
+  width: 90%;
+  text-align: center;
+  color: $silver_white;
+  background-image: url(../images/wood-pattern.png);
+  background-color: $dark_brown;
+  border: 3px solid $yellow_color;
+  border-radius: calc-rem(20);
+  @include extra-large {
+    margin-top: 12%;
+  }
+  @include medium-breakpoint {
+    margin-top: 12%;
+  }
+  @include small-breakpoint {
+    margin-top: 16%;
+  }
+  @include phone-breakpoint {
+    margin-top: 20%;
+  }
+  p {
+    margin: calc-rem(-3) 0;
+  }
+  a {
+    color: $silver_white;
+    text-decoration: underline;
+    &:hover {
+      color: $silver_white;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+
+// Variables
+
+// Change Font Awesome Default Path
+$fa-font-path: "../fonts";
+
+//Fonts
+$title_font: 'Luckiest Guy', cursive;
+$body_font: 'Fredoka One', cursive;
+
+// Font Sizes
+$root-size: 1em;
+$small_size: calc-rem(14);
+$size_16: calc-rem(16);
+$default_size: calc-rem(18);
+$medium_size: calc-rem(20);
+$large_size: calc-rem(22);
+$display_size: calc-rem(36);
+
+//Colors
+$silver_white: rgb(235, 235, 235);
+$light_gray: rgb(232, 232, 232);
+$green_color: rgb(114, 211, 127);
+$yellow_color: rgb(255, 255, 0);
+$dark_brown: rgb(74, 59, 0);
+$dark_green: rgb(8, 170, 43);

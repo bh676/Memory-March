@@ -1,0 +1,68 @@
+
+// Mixins
+@mixin square-setup {
+  display: inline-block;
+  position: relative;
+  margin: calc-rem(-1);
+  height: calc-rem(85);
+  width: calc-rem(85);
+  border: 1px solid black;
+  border-radius: calc-rem(5);
+}
+
+@mixin flash-setup {
+  animation-name: flash;
+  animation-delay: 0;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+//Custom Breakpoints
+@mixin jumbo {
+  @media only screen and(min-width: 1900px) {
+    @content;
+  }
+}
+
+@mixin extra-large {
+  @media only screen and(min-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin medium-breakpoint {
+  @media only screen and(max-width: 1050px) {
+    @content;
+  }
+}
+
+@mixin small-breakpoint {
+  @media only screen and(max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin phone-breakpoint {
+  @media only screen and(max-width: 650px) {
+    @content;
+  }
+}
+
+@mixin small-phone {
+  @media only screen and(max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin xs-phone {
+  @media only screen and(max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin tiny-phone {
+  @media only screen and(max-width: 350px) {
+    @content;
+  }
+}
